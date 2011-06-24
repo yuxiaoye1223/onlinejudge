@@ -33,22 +33,22 @@ function xmldb_local_onlinejudge_upgrade($oldversion=0) {
     $result = true;
 
     if ($oldversion < 2010090103) {
-        $dbman->install_one_table_from_xmldb_file($CFG->dirroot.'/local/onlinejudge/db/install.xml', 'onlinejudge_task');
+        $dbman->install_one_table_from_xmldb_file($CFG->dirroot.'/local/onlinejudge/db/install.xml', 'onlinejudge_tasks');
         upgrade_plugin_savepoint(true, 2010090103, 'local', 'onlinejudge');
     }
 
     if ($oldversion < 2010090107) {
-        $dbman->install_one_table_from_xmldb_file($CFG->dirroot.'/local/onlinejudge/db/install.xml', 'onlinejudge_task');
+        $dbman->install_one_table_from_xmldb_file($CFG->dirroot.'/local/onlinejudge/db/install.xml', 'onlinejudge_tasks');
         upgrade_plugin_savepoint(true, 2010090107, 'local', 'onlinejudge');
     }
 
     if ($oldversion < 2010110400) {
-        $dbman->install_one_table_from_xmldb_file($CFG->dirroot.'/local/onlinejudge/db/install.xml', 'onlinejudge_task');
+        $dbman->install_one_table_from_xmldb_file($CFG->dirroot.'/local/onlinejudge/db/install.xml', 'onlinejudge_tasks');
         upgrade_plugin_savepoint(true, 2010110400, 'local', 'onlinejudge');
     }
 
     if ($oldversion < 2011010600) {
-        $dbman->install_one_table_from_xmldb_file($CFG->dirroot.'/local/onlinejudge/db/install.xml', 'onlinejudge_task');
+        $dbman->install_one_table_from_xmldb_file($CFG->dirroot.'/local/onlinejudge/db/install.xml', 'onlinejudge_tasks');
         upgrade_plugin_savepoint(true, 2011010600, 'local', 'onlinejudge');
     }
 

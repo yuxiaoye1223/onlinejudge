@@ -32,7 +32,12 @@
 if (!defined('MOODLE_INTERNAL')) {
     die('Direct access to this script is forbidden.'); //  It must be included from a Moodle page
 }
- 
+
+//need the unittestprefix
+if (empty($CFG->unittestprefix)) {
+    die('You must define $CFG->unittestprefix to run these unit tests.');
+}
+
 // access to use global variables.
 require_once(dirname(dirname(dirname(dirname(__FILE__)))) . '/config.php');
 
@@ -42,12 +47,13 @@ require_once($CFG->dirroot . '/local/onlinejudge/judgelib.php'); // Include here
 // A secret file to store ideone username and password. It should contains:
 // 
 // <?
-// define('ideoneuser', 'username');
-// define('ideonepass', 'api_password');
-require_once('ideone_secret.php');
+define('ideoneuser', 'yuzhanlaile2');
+define('ideonepass', 'yuzhanlaile2');
+//require_once('ideone_secret.php');
 
 /** This class contains the test cases for the functions in judegelib.php. */
-class local_onlinejudge_test extends UnitTestCase {
+//class local_onlinejudge_test extends UnitTestCase {
+class judgelib_test extends UnitTestCase {
 	function setUp() {
         global $DB, $CFG;
 
@@ -107,7 +113,7 @@ int main(void)
     return 0;
 }
         ');
-        $this->triger_test('c_sandbox', $files, 'hello', 'hello', 1, 1024*1024, ONLINEJUDGE_STATUS_ACCEPTED);
+        $this->triger_test('11_ideone', $files, 'hello', 'hello', 1, 1024*1024*1024, ONLINEJUDGE_STATUS_ACCEPTED);
 	}
 
 	function test_memlimit() {

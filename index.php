@@ -24,7 +24,6 @@
  */
 
 require_once('../../config.php');
-require_once(dirname(__FILE__).'/locallib.php');
 
 require_login(SITEID, false);
 
@@ -32,8 +31,8 @@ global $CFG, $PAGE;
 
 $PAGE->set_pagelayout('standard');
 $PAGE->set_url('/local/onlinejudge/index.php');
-$PAGE->set_title('Onlinejudge2');
-$PAGE->set_heading('Onlinejudge2');
+$PAGE->set_title('Onlinejudge');
+$PAGE->set_heading('Onlinejudge');
 
 $output = $PAGE->get_renderer('local_onlinejudge');
 
@@ -45,6 +44,7 @@ echo $output->container(get_string('about', 'local_onlinejudge'));
 echo $output->heading(get_string('privileges', 'local_onlinejudge'));
 
 $caps = array();
+
 if (has_capability('local/onlinejudge:manage', get_system_context())) {
     $caps[] = get_string('onlinejudge:manage', 'local_onlinejudge');
 }
@@ -58,6 +58,7 @@ else {
     $caps = '<li>' . implode("</li>\n<li>", $caps) . '</li>';
     echo html_writer::tag('ul', $caps);
 }
+
 
 echo $output->footer();
 ?>

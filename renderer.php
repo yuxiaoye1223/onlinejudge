@@ -28,7 +28,7 @@ defined('MOODLE_INTERNAL') || die();
 /**
  * AMOS renderer class
  */
-class local_onlinejudge2_renderer extends plugin_renderer_base {
+class local_onlinejudge_renderer extends plugin_renderer_base {
 
     /**
      * Renders the filter form

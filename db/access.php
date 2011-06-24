@@ -28,39 +28,38 @@ defined('MOODLE_INTERNAL') || die();
 $capabilities = array(
 
     // Ability to set-up Onlinejudge2
-    'local/onlinejudge:manages' => array(
+    'local/onlinejudge:manage' => array(
+        'captype' => 'write',
+        'contextlevel' => CONTEXT_SYSTEM,
+        'legacy' => array()
+    ),
+    
+    // Ability to commit
+    'local/onlinejudge:commit' => array(
         'captype' => 'write',
         'contextlevel' => CONTEXT_SYSTEM,
         'legacy' => array()
     ),
     
     // Ability to view the tasks
-    'local/onlinejudge:viewin' => array(
+    'local/onlinejudge:view' => array(
         'captype' => 'write',
         'contextlevel' => CONTEXT_SYSTEM,
         'legacy' => array()
     ),
 
     // Ability to query the task.
-    'local/onlinejudge:queryin' => array(
+    'local/onlinejudge:query' => array(
         'captype' => 'write',
         'contextlevel' => CONTEXT_SYSTEM,
         'legacy' => array()
     ),
 
     // Ability to delete the task
-    'local/onlinejudge:deletein' => array(
+    'local/onlinejudge:delete' => array(
         'captype' => 'write',
         'contextlevel' => CONTEXT_SYSTEM,
         'legacy' => array()
     ),
-
-    // Ability to ...
-    'local/onlinejudge:addin' => array(
-        'captype' => 'write',
-        'contextlevel' => CONTEXT_SYSTEM,
-        'legacy' => array()
-    ),
-
 
 );

@@ -29,7 +29,7 @@ defined('MOODLE_INTERNAL') || die();
  * add the onlinejudge plugin into navigation
  */
 function onlinejudge_extends_navigation(global_navigation $navigation) {
-    $onlinejudge = $navigation->add('Onlinejudge2', new moodle_url('/local/onlinejudge/'));
+    $onlinejudge = $navigation->add('Onlinejudge', new moodle_url('/local/onlinejudge/'));
 
     $onlinejudge->add("配置", new moodle_url("/local/onlinejudge/config.php"));
     $onlinejudge->add("在线评测", new moodle_url("/local/onlinejudge/judge.php"));
